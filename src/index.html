@@ -73,15 +73,30 @@
 		myPlayer.play();
 
 	}
+	
+	var shuffled = 0;
+	
 	function shufflePlaylist()
 	{
 	
-	var playList =[document.getElementById("PlayFirstURL").value, document.getElementsByName("secondURL")[0].value, "document.getElementsByName("thirdURL")[0].value"];
+	shuffled = 1;
+		///return shuffled;
+	var playList =[document.getElementById("PlayFirstURL").value, document.getElementsByName("secondURL")[0].value, document.getElementsByName("thirdURL")[0].value];
 	playList.sort(function(a,b){return 0.5 - Math.random()});
 	myPlayer.src({type: "application/x-mpegURL",src: playList[0]});
 	myPlayer.play();
-	
 	}
+	function playShuffle() {
+	if(shuffled>0) {
+	var playList =[document.getElementById("PlayFirstURL").value, document.getElementsByName("secondURL")[0].value, document.getElementsByName("thirdURL")[0].value];
+	playList.sort(function(a,b){return 0.5 - Math.random()});
+	myPlayer.src({type: "application/x-mpegURL",src: playList[0]});
+	myPlayer.play();
+	}
+	}
+	
+	myPlayer.on('ended', function () {playShuffle();} );
+	
 	
 	</script>
 	
