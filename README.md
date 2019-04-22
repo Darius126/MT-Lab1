@@ -1,3 +1,5 @@
+﻿Išbandyta ir veikia su Google chrome ir FireFox našyklėmis
+
 # MT-Lab1
 Multimedijos sistemos. Laboratorinis darbas Nr.1 ir Nr.2
 
